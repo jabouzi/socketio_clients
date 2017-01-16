@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements IOCallback{
         try {
             value = data.getString("value");
             System.out.println("Server triggered event '" + event + "' : " + value);
-            mMessagesView = (TextView) findViewById(R.id.text);
+//            mMessagesView = (TextView) findViewById(R.id.text);
 //            mMessagesView.setText("XXX");
             Log.i("VALUE : ", value);
 //            System.out.println("Server triggered event '" + data.getString("value") + "'");
