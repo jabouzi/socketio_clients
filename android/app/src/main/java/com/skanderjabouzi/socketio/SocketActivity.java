@@ -1,5 +1,6 @@
 package com.skanderjabouzi.socketio;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -7,32 +8,26 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import java.util.logging.Logger;
-import java.util.logging.Level;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.content.IntentFilter;
 
-import java.net.MalformedURLException;
-import java.net.URI;
-import org.json.JSONObject;
-import org.json.JSONException;
 
-import io.socket.SocketIO;
-import io.socket.IOCallback;
-import io.socket.IOAcknowledge;
-import io.socket.SocketIOException;
-
-public class SocketActivity extends AppCompatActivity implements IOCallback{
+public class SocketActivity extends AppCompatActivity{
 
     private TextView mMessagesView;
-    private SocketIO socket;
-    private String value = "";
+    SocketTask socketTask;
+    public static Activity sa;
+    PaReceiver receiver;
+    IntentFilter filter;
+
+    static final String SEND_PA_NOTIFICATIONS = "com.skanderjabouzi.socketio.SEND_PA_NOTIFICATIONS";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sa = this;
         setContentView(R.layout.socket_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -40,70 +35,59 @@ public class SocketActivity extends AppCompatActivity implements IOCallback{
         mMessagesView = (TextView) findViewById(R.id.text);
         mMessagesView.setText("TEXT TEXT");
 
-        try {
-            socket = new SocketIO();
-            socket.connect("http://10.5.4.151:6543/pa", this);
-            Logger sioLogger = java.util.logging.Logger.getLogger("io.socket");
-            sioLogger.setLevel(Level.OFF);
-
-           // Emits an event to the server.
-            socket.emit("set_pa", "test2");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+        receiver = new PaReceiver();
+        filter = new IntentFilter( WebSocketIo.PA_INTENT );
     }
 
-
     @Override
-    public void onMessage(JSONObject json, IOAcknowledge ack) {
-        try {
-            System.out.println("Server said:" + json.toString(2));
-            Log.i("SOCKETIO", json.toString());
-//            mMessagesView.setText(json.toString());
-        } catch (JSONException e) {
-            e.printStackTrace();
+    protected void onResume() {
+        super.onResume();
+        Log.d("VIDEO", "onResume");
+
+//        registerReceiver(receiver, filter, SEND_PA_NOTIFICATIONS, null);
+        socketTask = (SocketTask) getLastNonConfigurationInstance();
+        if (socketTask == null)
+        {
+            socketTask = new SocketTask("http://10.5.4.151:6543/pa", getApplicationContext(), "on");
+//            socketTask.m_activity = this;
+            socketTask.execute();
         }
     }
 
     @Override
-    public void onMessage(String data, IOAcknowledge ack) {
-        System.out.println("Server said: " + data);
-//        mMessagesView.setText(data);
+    protected void onPause() {
+        super.onPause();
+        socketTask.m_activity = null;
+        socketTask.cancel(true);
+        socketTask.disconnect();
+//        if (receiver != null) {
+//            unregisterReceiver(receiver);
+//            receiver = null;
+//        }
     }
 
     @Override
-    public void onError(SocketIOException socketIOException) {
-        System.out.println("an Error occured");
-        socketIOException.printStackTrace();
+    protected void onStop() {
+        super.onStop();
+        socketTask.m_activity = null;
+        socketTask.cancel(true);
+        socketTask.disconnect();
+//        if (receiver != null) {
+//            unregisterReceiver(receiver);
+//            receiver = null;
+//        }
     }
 
     @Override
-    public void onDisconnect() {
-        System.out.println("Connection terminated.");
-    }
-
-    @Override
-    public void onConnect() {
-        System.out.println("Connection established");
-    }
-
-    @Override
-    public void on(String event, IOAcknowledge ack, Object... args) {
-        JSONObject data = (JSONObject) args[0];
-        try {
-            value = data.getString("value");
-            System.out.println("Server triggered event '" + event + "' : " + value);
-//            mMessagesView = (TextView) findViewById(R.id.text);
-//            mMessagesView.setText("XXX");
-            Log.i("JSON : ", data.toString());
-            Log.i("EVENT : ", event);
-            Log.i("VALUE : ", value);
-//            System.out.println("Server triggered event '" + data.getString("value") + "'");
-        } catch (JSONException e) {
-            return;
-        }
-
+    protected void onDestroy() {
+        super.onDestroy();
+        socketTask.m_activity = null;
+        socketTask.cancel(true);
+        socketTask.disconnect();
+//        if (receiver != null) {
+//            unregisterReceiver(receiver);
+//            receiver = null;
+//        }
     }
 
     @Override

@@ -1,17 +1,22 @@
 package com.skanderjabouzi.socketio;
 
 import android.os.AsyncTask;
+import android.content.Context;
 
 public class SocketTask extends AsyncTask<Void, Void, Void> {
 
     String dstAddress;
     WebSocketIo socketIo;
+    Context context;
+    String lastState;
 
     MainActivity m_activity = null;
     boolean m_isFinished  = false;
 
-    SocketTask(String addr){
+    SocketTask(String addr, Context _context, String _lastState){
         dstAddress = addr;
+        context = _context;
+        lastState = _lastState;
     }
 
     public void disconnect()
@@ -22,7 +27,7 @@ public class SocketTask extends AsyncTask<Void, Void, Void> {
     @Override
     protected Void doInBackground(Void... arg0) {
         socketIo = new WebSocketIo();
-        socketIo.connect(dstAddress);
+        socketIo.connect(dstAddress, context, lastState);
         return null;
     }
 

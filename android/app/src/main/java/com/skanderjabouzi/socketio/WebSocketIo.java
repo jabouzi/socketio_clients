@@ -9,6 +9,10 @@ import io.socket.SocketIO;
 import io.socket.IOCallback;
 import io.socket.IOAcknowledge;
 import io.socket.SocketIOException;
+import android.content.Intent;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
 
 /**
  * Created by dev on 1/19/17.
@@ -18,8 +22,21 @@ public class WebSocketIo implements IOCallback{
 
     private SocketIO socket;
     private String value;
+    private String lastState;
+    private Context context;
 
-    public void connect(String addr) {
+    public static final String PA_INTENT = "com.skanderjabouzi.socketio.PA_INTENT";
+//    public static final String RECEIVE_PA_NOTIFICATIONS = "com.skanderjabouzi.socketio_RECEIVE_PA_NOTIFICATIONS";
+
+//    private NotificationManager notificationManager;
+//    private Notification notification;
+
+    public void connect(String addr, Context _context, String _lastState) {
+
+        lastState = _lastState;
+        context = _context;
+        Log.i("### LASTE STATE : ", lastState);
+
         try {
             socket = new SocketIO();
             socket.connect(addr, this);
@@ -36,6 +53,17 @@ public class WebSocketIo implements IOCallback{
     public void disconnect()
     {
         socket.disconnect();
+    }
+
+    private void set_pa(String pa_state, String pa_intent) {
+        Intent intent;
+        intent = new Intent();
+        intent.setAction(pa_intent);
+        intent.putExtra("PASTATE", pa_state);
+        context.sendBroadcast(intent);
+        Log.i("#### BROADCAST ", pa_state + " -> " + pa_intent);
+//        this.notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+//        this.notificationManager.cancel(0);
     }
 
     @Override
@@ -77,11 +105,24 @@ public class WebSocketIo implements IOCallback{
         try {
             value = data.getString("value");
             System.out.println("Server triggered event '" + event + "' : " + value);
-//            mMessagesView = (TextView) findViewById(R.id.text);
-//            mMessagesView.setText("XXX");
             Log.i("JSON : ", data.toString());
             Log.i("EVENT : ", event);
             Log.i("VALUE : ", value);
+            Log.i("LASTE STATE : ", lastState);
+
+            if (event.equals("pa_state"))
+            {
+                if (!lastState.equals(value))
+                {
+                    if (value.equals("on")) {
+                        set_pa("on", PA_INTENT);
+
+                    } else {
+                        set_pa("off", PA_INTENT);
+                    }
+                    lastState = value;
+                }
+            }
 //            System.out.println("Server triggered event '" + data.getString("value") + "'");
         } catch (JSONException e) {
             return;
