@@ -13,6 +13,14 @@
 		D7FDDCF61E32741A001ABD41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7FDDCF51E32741A001ABD41 /* Assets.xcassets */; };
 		D7FDDCF91E32741A001ABD41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7FDDCF71E32741A001ABD41 /* LaunchScreen.storyboard */; };
 		D7FDDD021E329A34001ABD41 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7FDDD011E329A34001ABD41 /* MediaPlayer.framework */; };
+		D7FDDD191E32B550001ABD41 /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FDDD071E32B550001ABD41 /* SocketIO.m */; };
+		D7FDDD1A1E32B550001ABD41 /* SocketIOJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FDDD091E32B550001ABD41 /* SocketIOJSONSerialization.m */; };
+		D7FDDD1B1E32B550001ABD41 /* SocketIOPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FDDD0B1E32B550001ABD41 /* SocketIOPacket.m */; };
+		D7FDDD1C1E32B550001ABD41 /* SocketIOTransportWebsocket.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FDDD0E1E32B550001ABD41 /* SocketIOTransportWebsocket.m */; };
+		D7FDDD1D1E32B550001ABD41 /* SocketIOTransportXHR.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FDDD101E32B550001ABD41 /* SocketIOTransportXHR.m */; };
+		D7FDDD1E1E32B550001ABD41 /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = D7FDDD121E32B550001ABD41 /* base64.c */; };
+		D7FDDD1F1E32B550001ABD41 /* NSData+SRB64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FDDD151E32B550001ABD41 /* NSData+SRB64Additions.m */; };
+		D7FDDD201E32B550001ABD41 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FDDD181E32B550001ABD41 /* SRWebSocket.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,25 @@
 		D7FDDCF81E32741A001ABD41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7FDDCFA1E32741A001ABD41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7FDDD011E329A34001ABD41 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		D7FDDD041E32B550001ABD41 /* WebsocketsBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebsocketsBridge.h; sourceTree = "<group>"; };
+		D7FDDD061E32B550001ABD41 /* SocketIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIO.h; sourceTree = "<group>"; };
+		D7FDDD071E32B550001ABD41 /* SocketIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIO.m; sourceTree = "<group>"; };
+		D7FDDD081E32B550001ABD41 /* SocketIOJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOJSONSerialization.h; sourceTree = "<group>"; };
+		D7FDDD091E32B550001ABD41 /* SocketIOJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOJSONSerialization.m; sourceTree = "<group>"; };
+		D7FDDD0A1E32B550001ABD41 /* SocketIOPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOPacket.h; sourceTree = "<group>"; };
+		D7FDDD0B1E32B550001ABD41 /* SocketIOPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOPacket.m; sourceTree = "<group>"; };
+		D7FDDD0C1E32B550001ABD41 /* SocketIOTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransport.h; sourceTree = "<group>"; };
+		D7FDDD0D1E32B550001ABD41 /* SocketIOTransportWebsocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportWebsocket.h; sourceTree = "<group>"; };
+		D7FDDD0E1E32B550001ABD41 /* SocketIOTransportWebsocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOTransportWebsocket.m; sourceTree = "<group>"; };
+		D7FDDD0F1E32B550001ABD41 /* SocketIOTransportXHR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportXHR.h; sourceTree = "<group>"; };
+		D7FDDD101E32B550001ABD41 /* SocketIOTransportXHR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOTransportXHR.m; sourceTree = "<group>"; };
+		D7FDDD121E32B550001ABD41 /* base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base64.c; sourceTree = "<group>"; };
+		D7FDDD131E32B550001ABD41 /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
+		D7FDDD141E32B550001ABD41 /* NSData+SRB64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SRB64Additions.h"; sourceTree = "<group>"; };
+		D7FDDD151E32B550001ABD41 /* NSData+SRB64Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SRB64Additions.m"; sourceTree = "<group>"; };
+		D7FDDD161E32B550001ABD41 /* SocketRocket-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-Prefix.pch"; sourceTree = "<group>"; };
+		D7FDDD171E32B550001ABD41 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
+		D7FDDD181E32B550001ABD41 /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +68,9 @@
 		D7FDDCE21E32741A001ABD41 = {
 			isa = PBXGroup;
 			children = (
+				D7FDDD031E32B550001ABD41 /* Bridge */,
+				D7FDDD051E32B550001ABD41 /* Socketio */,
+				D7FDDD111E32B550001ABD41 /* SocketRocket */,
 				D7FDDCED1E32741A001ABD41 /* socketio_client */,
 				D7FDDCEC1E32741A001ABD41 /* Products */,
 				D7FDDD001E329A34001ABD41 /* Frameworks */,
@@ -74,6 +104,46 @@
 				D7FDDD011E329A34001ABD41 /* MediaPlayer.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7FDDD031E32B550001ABD41 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				D7FDDD041E32B550001ABD41 /* WebsocketsBridge.h */,
+			);
+			path = Bridge;
+			sourceTree = "<group>";
+		};
+		D7FDDD051E32B550001ABD41 /* Socketio */ = {
+			isa = PBXGroup;
+			children = (
+				D7FDDD061E32B550001ABD41 /* SocketIO.h */,
+				D7FDDD071E32B550001ABD41 /* SocketIO.m */,
+				D7FDDD081E32B550001ABD41 /* SocketIOJSONSerialization.h */,
+				D7FDDD091E32B550001ABD41 /* SocketIOJSONSerialization.m */,
+				D7FDDD0A1E32B550001ABD41 /* SocketIOPacket.h */,
+				D7FDDD0B1E32B550001ABD41 /* SocketIOPacket.m */,
+				D7FDDD0C1E32B550001ABD41 /* SocketIOTransport.h */,
+				D7FDDD0D1E32B550001ABD41 /* SocketIOTransportWebsocket.h */,
+				D7FDDD0E1E32B550001ABD41 /* SocketIOTransportWebsocket.m */,
+				D7FDDD0F1E32B550001ABD41 /* SocketIOTransportXHR.h */,
+				D7FDDD101E32B550001ABD41 /* SocketIOTransportXHR.m */,
+			);
+			path = Socketio;
+			sourceTree = "<group>";
+		};
+		D7FDDD111E32B550001ABD41 /* SocketRocket */ = {
+			isa = PBXGroup;
+			children = (
+				D7FDDD121E32B550001ABD41 /* base64.c */,
+				D7FDDD131E32B550001ABD41 /* base64.h */,
+				D7FDDD141E32B550001ABD41 /* NSData+SRB64Additions.h */,
+				D7FDDD151E32B550001ABD41 /* NSData+SRB64Additions.m */,
+				D7FDDD161E32B550001ABD41 /* SocketRocket-Prefix.pch */,
+				D7FDDD171E32B550001ABD41 /* SRWebSocket.h */,
+				D7FDDD181E32B550001ABD41 /* SRWebSocket.m */,
+			);
+			path = SocketRocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,8 +219,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7FDDD191E32B550001ABD41 /* SocketIO.m in Sources */,
 				D7FDDCF11E32741A001ABD41 /* ViewController.swift in Sources */,
+				D7FDDD201E32B550001ABD41 /* SRWebSocket.m in Sources */,
+				D7FDDD1D1E32B550001ABD41 /* SocketIOTransportXHR.m in Sources */,
+				D7FDDD1F1E32B550001ABD41 /* NSData+SRB64Additions.m in Sources */,
+				D7FDDD1B1E32B550001ABD41 /* SocketIOPacket.m in Sources */,
 				D7FDDCEF1E32741A001ABD41 /* AppDelegate.swift in Sources */,
+				D7FDDD1C1E32B550001ABD41 /* SocketIOTransportWebsocket.m in Sources */,
+				D7FDDD1E1E32B550001ABD41 /* base64.c in Sources */,
+				D7FDDD1A1E32B550001ABD41 /* SocketIOJSONSerialization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +357,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.skanderjabouzi.socketio-client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/dev/Developments/IOS/socketio_clients/ios/socketio_client/Bridge/WebsocketsBridge.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -293,6 +372,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.skanderjabouzi.socketio-client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/dev/Developments/IOS/socketio_clients/ios/socketio_client/Bridge/WebsocketsBridge.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
