@@ -13,10 +13,18 @@ import AVFoundation
 class ViewController: UIViewController {
     
     var playerViewController : AVPlayerViewController!;
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         playMovie()
+        
+        let asyncSocket = AsyncSocket();
+        
+        let backgroundQueue = DispatchQueue(label: "com.app.queue", qos: .background, target: nil)
+        let block = DispatchWorkItem {
+            asyncSocket.connect();
+        }
+        backgroundQueue.async(execute: block)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
