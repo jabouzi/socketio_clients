@@ -22,6 +22,7 @@ public class SocketTask extends AsyncTask<Void, Void, Void> {
     public void disconnect()
     {
         socketIo.disconnect();
+        m_isFinished = true;
     }
 
     @Override
