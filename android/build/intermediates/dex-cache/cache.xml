@@ -124,7 +124,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="1a9fc5c3b4d547e05765e3a4fc50511660f2f58c">
+        sha1="c82a5e11617b5bfc3b5edb0c08279dadf0ebd79a">
         <dex dex="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_aa5f9db983893fb460b552c802cb99c2a50fe150/classes.dex" />
     </item>
     <item

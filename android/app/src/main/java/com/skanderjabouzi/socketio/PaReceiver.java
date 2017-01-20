@@ -22,7 +22,11 @@ class PaReceiver extends BroadcastReceiver {
 
         } else {
             intent.setClass(context.getApplicationContext(), MainActivity.class);
-            SocketActivity.sa.finish();
+            try {
+                SocketActivity.sa.finish();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         }
