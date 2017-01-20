@@ -11,7 +11,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.content.IntentFilter;
 
 
 public class SocketActivity extends AppCompatActivity{
@@ -19,10 +18,7 @@ public class SocketActivity extends AppCompatActivity{
     private TextView mMessagesView;
     SocketTask socketTask;
     public static Activity sa;
-    PaReceiver receiver;
-    IntentFilter filter;
 
-    static final String SEND_PA_NOTIFICATIONS = "com.skanderjabouzi.socketio.SEND_PA_NOTIFICATIONS";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +30,6 @@ public class SocketActivity extends AppCompatActivity{
 
         mMessagesView = (TextView) findViewById(R.id.text);
         mMessagesView.setText("TEXT TEXT");
-
-        receiver = new PaReceiver();
-        filter = new IntentFilter( WebSocketIo.PA_INTENT );
     }
 
     @Override
@@ -44,12 +37,10 @@ public class SocketActivity extends AppCompatActivity{
         super.onResume();
         Log.d("VIDEO", "onResume");
 
-//        registerReceiver(receiver, filter, SEND_PA_NOTIFICATIONS, null);
         socketTask = (SocketTask) getLastNonConfigurationInstance();
         if (socketTask == null)
         {
             socketTask = new SocketTask("http://10.5.4.151:6543/pa", getApplicationContext(), "on");
-//            socketTask.m_activity = this;
             socketTask.execute();
         }
     }
@@ -60,10 +51,6 @@ public class SocketActivity extends AppCompatActivity{
         socketTask.m_activity = null;
         socketTask.cancel(true);
         socketTask.disconnect();
-//        if (receiver != null) {
-//            unregisterReceiver(receiver);
-//            receiver = null;
-//        }
     }
 
     @Override
@@ -72,10 +59,6 @@ public class SocketActivity extends AppCompatActivity{
         socketTask.m_activity = null;
         socketTask.cancel(true);
         socketTask.disconnect();
-//        if (receiver != null) {
-//            unregisterReceiver(receiver);
-//            receiver = null;
-//        }
     }
 
     @Override
@@ -84,10 +67,6 @@ public class SocketActivity extends AppCompatActivity{
         socketTask.m_activity = null;
         socketTask.cancel(true);
         socketTask.disconnect();
-//        if (receiver != null) {
-//            unregisterReceiver(receiver);
-//            receiver = null;
-//        }
     }
 
     @Override

@@ -35,7 +35,6 @@ public class SocketTask extends AsyncTask<Void, Void, Void> {
     protected void onPostExecute(Void result) {
         //textResponse.setText(response);
         super.onPostExecute(result);
-        //m_isFinished = true;
     }
 
     @Override

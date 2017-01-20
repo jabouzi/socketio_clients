@@ -14,16 +14,13 @@ class PaReceiver extends BroadcastReceiver {
         String pa_state = intent.getStringExtra("PASTATE");
         Toast.makeText(context, "It's PA " + pa_state + "### ", Toast.LENGTH_LONG).show();
         Log.i("PAReceiver", pa_state);
-        //SalatApplication.write2sd("SalatReceiver", salatName);
         if (pa_state.equals("on")) {
-            //Intent intent = new Intent();
             intent.setClass(context.getApplicationContext(), SocketActivity.class);
             MainActivity.ma.finish();
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
 
         } else {
-            //Intent intent = new Intent();
             intent.setClass(context.getApplicationContext(), MainActivity.class);
             SocketActivity.sa.finish();
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

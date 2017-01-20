@@ -10,8 +10,6 @@ import io.socket.IOCallback;
 import io.socket.IOAcknowledge;
 import io.socket.SocketIOException;
 import android.content.Intent;
-import android.app.Notification;
-import android.app.NotificationManager;
 import android.content.Context;
 
 /**
@@ -26,10 +24,6 @@ public class WebSocketIo implements IOCallback{
     private Context context;
 
     public static final String PA_INTENT = "com.skanderjabouzi.socketio.PA_INTENT";
-//    public static final String RECEIVE_PA_NOTIFICATIONS = "com.skanderjabouzi.socketio_RECEIVE_PA_NOTIFICATIONS";
-
-//    private NotificationManager notificationManager;
-//    private Notification notification;
 
     public void connect(String addr, Context _context, String _lastState) {
 
@@ -62,8 +56,6 @@ public class WebSocketIo implements IOCallback{
         intent.putExtra("PASTATE", pa_state);
         context.sendBroadcast(intent);
         Log.i("#### BROADCAST ", pa_state + " -> " + pa_intent);
-//        this.notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-//        this.notificationManager.cancel(0);
     }
 
     @Override
@@ -71,7 +63,6 @@ public class WebSocketIo implements IOCallback{
         try {
             System.out.println("Server said:" + json.toString(2));
             Log.i("SOCKETIO", json.toString());
-//            mMessagesView.setText(json.toString());
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -80,7 +71,6 @@ public class WebSocketIo implements IOCallback{
     @Override
     public void onMessage(String data, IOAcknowledge ack) {
         System.out.println("Server said: " + data);
-//        mMessagesView.setText(data);
     }
 
     @Override
