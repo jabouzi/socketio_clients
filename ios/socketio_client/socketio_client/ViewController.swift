@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         
         let asyncSocket = AsyncSocket();
         
-        let backgroundQueue = DispatchQueue(label: "com.app.queue", qos: .background, target: nil)
+        let backgroundQueue = DispatchQueue(label: "com.skanderjabouzi.socketio-client.queue", qos: .background, target: nil)
         let block = DispatchWorkItem {
             asyncSocket.connect();
         }
