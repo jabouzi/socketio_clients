@@ -393,7 +393,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.skanderjabouzi.socketio-client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/dev/Developments/IOS/socketio_clients/ios/socketio_client/Bridge/WebsocketsBridge.h;
+				SWIFT_OBJC_BRIDGING_HEADER = $PROJECT_DIR/Bridge/WebsocketsBridge.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -408,7 +408,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.skanderjabouzi.socketio-client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = /Users/dev/Developments/IOS/socketio_clients/ios/socketio_client/Bridge/WebsocketsBridge.h;
+				SWIFT_OBJC_BRIDGING_HEADER = $PROJECT_DIR/Bridge/WebsocketsBridge.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

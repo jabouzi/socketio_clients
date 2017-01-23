@@ -15,16 +15,18 @@ class ViewController: UIViewController {
     var playerViewController : AVPlayerViewController!;
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         playMovie()
         
         let asyncSocket = AsyncSocket();
+        asyncSocket.connect();
         
-        let backgroundQueue = DispatchQueue(label: "com.skanderjabouzi.socketio-client.queue", qos: .background, target: nil)
+        /*let backgroundQueue = DispatchQueue(label: "com.skanderjabouzi.socketio-client.queue", qos: .background, target: nil)
         let block = DispatchWorkItem {
             asyncSocket.connect();
         }
-        backgroundQueue.async(execute: block)
+        backgroundQueue.async(execute: block)*/
         // Do any additional setup after loading the view, typically from a nib.
     }
 

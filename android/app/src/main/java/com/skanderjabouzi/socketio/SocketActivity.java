@@ -17,6 +17,7 @@ public class SocketActivity extends AppCompatActivity{
 
     private TextView mMessagesView;
     SocketTask socketTask;
+    WebSocketIo socketIo;
     public static Activity sa;
 
 
@@ -37,36 +38,42 @@ public class SocketActivity extends AppCompatActivity{
         super.onResume();
         Log.d("VIDEO", "onResume");
 
-        socketTask = (SocketTask) getLastNonConfigurationInstance();
-        if (socketTask == null)
-        {
-            socketTask = new SocketTask("http://10.5.4.151:6543/pa", getApplicationContext(), "on");
-            socketTask.execute();
-        }
+//        socketTask = (SocketTask) getLastNonConfigurationInstance();
+//        if (socketTask == null)
+//        {
+//            socketTask = new SocketTask("http://10.5.4.151:6543/pa", getApplicationContext(), "on");
+//            socketTask.execute();
+//        }
+        socketIo = new WebSocketIo();
+        socketIo.connect("http://192.168.1.14:6543/pa", getApplicationContext(), "off");
+
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        socketTask.m_activity = null;
-        socketTask.cancel(true);
-        socketTask.disconnect();
+//        socketTask.m_activity = null;
+//        socketTask.cancel(true);
+//        socketTask.disconnect();
+        socketIo.disconnect();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        socketTask.m_activity = null;
-        socketTask.cancel(true);
-        socketTask.disconnect();
+//        socketTask.m_activity = null;
+//        socketTask.cancel(true);
+//        socketTask.disconnect();
+        socketIo.disconnect();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        socketTask.m_activity = null;
-        socketTask.cancel(true);
-        socketTask.disconnect();
+//        socketTask.m_activity = null;
+//        socketTask.cancel(true);
+//        socketTask.disconnect();
+        socketIo.disconnect();
     }
 
     @Override

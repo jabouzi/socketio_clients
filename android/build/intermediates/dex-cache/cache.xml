@@ -3,147 +3,147 @@
 
     <item
         is-multidex="true"
-        jar="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/jars/classes.jar"
+        jar="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b4c33b76d811b686fbeb3b348ba06b15614196c8">
+        <dex dex="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_93a1c81b36e0c3514cfb97c76e4757b5357b07e9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
-        <dex dex="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.1.0_12bc474f50110520b99f0dd4be0ca812d2a9b4cc/classes.dex" />
+        <dex dex="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.1.0_bb8672716cac3ec2ddda57171f26fd90d2288993/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="30103d98fa5ed824b54af839c85e2111f9bde8ec">
-        <dex dex="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.1.0_ef5384456f5c300b89af8dcc647ce0811c138bd3/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/dev/Developments/IOS/socketio_clients/android/app/libs/socketio.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="9b62970ddeb0bc89a11bf90c5b1a19482913675b">
-        <dex dex="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/2/socketio_bb4a4aa5e1c27ebd9b17cb08e99f9e1960f5d307/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="aee64634871d88a419d59eb743c1258a60f19700">
-        <dex dex="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.0_ecea88a76535c8673732697749f3cfc1171d84bf/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
-        <dex dex="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.1.0_be55e1dd298396bbff9fa75a8189b6c3851fe824/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
-        <dex dex="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.1.0_54e359ae0b512acc99ad3b16a172af50675efab7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.1.0_439cedf64d8f2cf7a9ea64c5a7071600970ab1e8/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
+        jar="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
-        <dex dex="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.0_761c23d1760983b5ec962b203b592af236fbd583/classes.dex" />
+        <dex dex="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.0_ef30a706897f06168f902d87717c6d344590b63b/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="bedb8f226e3353c20c7930b253e9821dc87a42e4">
-        <dex dex="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_ea07850ed8d893a203238d0e714be9236d593e7e/classes.dex" />
+        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
+        <dex dex="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.1.0_87a6cd5ff066f96e07e0d665bad2d024f8fe47ac/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/transition/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="d38084015027549951cbaea5d5f6fb795cc81151">
-        <dex dex="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.1.0_0252efcf6dd036af9fd9575c8f4c3c34bf8c5338/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
-        <dex dex="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.0_cd88a7dc0f413666bd92c48fcbd56d4b7cb8e11b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
-        <dex dex="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.0_4d17ceb0292994c6c5c66860c500670c86163a14/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/dev/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.0/support-annotations-25.1.0.jar"
+        jar="/Users/skanderjabouzi/android-sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.0/support-annotations-25.1.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
-        <dex dex="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.1.0_9b0a2698834495a261aba4ab0a41acf74b51c080/classes.dex" />
+        <dex dex="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.1.0_57d8eceb4b2e2f1bf19004e1432c633ed11c5bb1/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/Users/skanderjabouzi/Development/socketio_clients/android/app/libs/socketio.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="c82a5e11617b5bfc3b5edb0c08279dadf0ebd79a">
-        <dex dex="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_aa5f9db983893fb460b552c802cb99c2a50fe150/classes.dex" />
+        sha1="9b62970ddeb0bc89a11bf90c5b1a19482913675b">
+        <dex dex="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/2/socketio_b12477ec110b6d075b5fec9c5aa1b27c31281ae5/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.0/jars/classes.jar"
+        jar="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
-        <dex dex="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.0_3a45649232290757d58ec3bec726d937202aa32d/classes.dex" />
+        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
+        <dex dex="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.0_5f98226fe2a20febf53a9bd962dfa7b81757611d/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.0/jars/classes.jar"
+        jar="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.1.0_ebbe6f70dec20d6b54112ccb14c67bf284af752d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="cdce5011fce81d94564484f58467d34ea3361717">
+        <dex dex="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_36f4c9c51158167ce5f47c6bd5c8d99ebd37fc13/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
-        <dex dex="/Users/dev/Developments/IOS/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.0_7590e1d2cdc3a0f21224a8baeda1bcff3aa5886c/classes.dex" />
+        <dex dex="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.0_16df8af1e7dd8ac14b8af8db9610138356f44c74/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
+        <dex dex="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.0_a3a170faabb816777979efd52fa9880569c41ea5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="30103d98fa5ed824b54af839c85e2111f9bde8ec">
+        <dex dex="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.1.0_0abc52cff2bd8255d4fe6c973c019223f043176c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/transition/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d38084015027549951cbaea5d5f6fb795cc81151">
+        <dex dex="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.1.0_28020687fef57e30126c558afca5274011b7a8c9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.0_78031f6f90a8ae05e1d47038283f8dd3056664be/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.0_591e56c85a56901dbc2d3d9262163cd10c89e659/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
+        <dex dex="/Users/skanderjabouzi/Development/socketio_clients/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.1.0_666cdfe2748a49969765fdc8614f9aca419708b7/classes.dex" />
     </item>
 
 </items>

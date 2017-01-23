@@ -21,6 +21,7 @@ public class MainActivity extends Activity {
     VideoView vidView;
     int currentPosition;
     SocketTask socketTask;
+	WebSocketIo socketIo;
     public static Activity ma;
 
 	@Override
@@ -35,8 +36,8 @@ public class MainActivity extends Activity {
 		vidControl.setAnchorView(vidView);
 		vidView.setMediaController(vidControl);
 
-		String vidAddress =
-				"https://archive.org/download/ksnn_compilation_master_the_internet/ksnn_compilation_master_the_internet_512kb.mp4";
+//		String vidAddress = "https://archive.org/download/ksnn_compilation_master_the_internet/ksnn_compilation_master_the_internet_512kb.mp4";
+		String vidAddress = "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
 		Uri vidUri = Uri.parse(vidAddress);
 		vidView.setVideoURI(vidUri);
 		vidView.start();
@@ -54,12 +55,14 @@ public class MainActivity extends Activity {
 		super.onResume();
         Log.d("VIDEO", "onResume");
 
-        socketTask = (SocketTask) getLastNonConfigurationInstance();
+        /*socketTask = (SocketTask) getLastNonConfigurationInstance();
         if (socketTask == null)
         {
             socketTask = new SocketTask("http://10.5.4.151:6543/pa", getApplicationContext(), "off");
             socketTask.execute();
-        }
+        }*/
+		socketIo = new WebSocketIo();
+		socketIo.connect("http://192.168.1.14:6543/pa", getApplicationContext(), "off");
 
         vidView.start();
         //vidView.seekTo(38484);
@@ -69,19 +72,21 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onPause() {
 		super.onPause();
-        socketTask.m_activity = null;
-        socketTask.cancel(true);
-        socketTask.disconnect();
+//        socketTask.m_activity = null;
+//        socketTask.cancel(true);
+//        socketTask.disconnect();
+        socketIo.disconnect();
 		Log.d("VIDEO", "onPause");
 	}
 
 	@Override
 	protected void onStop() {
 		super.onStop();
-        socketTask.m_activity = null;
-        socketTask.cancel(true);
-        socketTask.disconnect();
-        Log.d("ASYNCTASK ", socketTask.isCancelled() ? "CANCELLED" : "NOT CANCELLED");
+//        socketTask.m_activity = null;
+//        socketTask.cancel(true);
+//        socketTask.disconnect();
+        socketIo.disconnect();
+//        Log.d("ASYNCTASK ", socketTask.isCancelled() ? "CANCELLED" : "NOT CANCELLED");
 		if (vidView.isPlaying()) Log.i("VIDEO", "IS PLAYING 1");
 		else Log.i("VIDEO", "IS NOT PLAYING 1");
         currentPosition = vidView.getCurrentPosition();
@@ -92,10 +97,11 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-        socketTask.m_activity = null;
-        socketTask.cancel(true);
-        socketTask.disconnect();
-        Log.d("ASYNCTASK ", socketTask.isCancelled() ? "CANCELLED" : "NOT CANCELLED");
+//        socketTask.m_activity = null;
+//        socketTask.cancel(true);
+//        socketTask.disconnect();
+        socketIo.disconnect();
+//        Log.d("ASYNCTASK ", socketTask.isCancelled() ? "CANCELLED" : "NOT CANCELLED");
 		if (vidView.isPlaying()) Log.i("VIDEO", "IS PLAYING 2");
 		else Log.i("VIDEO", "IS NOT PLAYING 2");
         currentPosition = vidView.getCurrentPosition();

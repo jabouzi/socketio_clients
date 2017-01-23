@@ -9,14 +9,14 @@
 import UIKit
 import Foundation
 
-class AsyncSocket: NSObject,  SocketIODelegate {
+class AsyncSocket: NSObject, SocketIODelegate {
     
     var socketio = SocketIO();
     
     func connect() {
-        //socketio = SocketIO();
+        //socketio = SocketIO(); 10.5.4.151
         socketio.delegate = self;
-        socketio.connect(toHost: "10.5.4.151", onPort: 6543, withParams: nil, withNamespace: "/pa");
+        socketio.connect(toHost: "192.168.1.14", onPort: 6543, withParams: nil, withNamespace: "/pa");
     }
     
     
@@ -29,7 +29,11 @@ class AsyncSocket: NSObject,  SocketIODelegate {
         print("1. didReceiveMessage >>> data: %@", packet.data);
     }
     
-    func socketIO(_ socket: SocketIO!, didReceiveEvent packet: SocketIOPacket!) {
+    /*func socketIO(_ socket: SocketIO!, didReceiveEvent packet: SocketIOPacket!) {
+        <#code#>
+    }*/
+    
+    /*func socketIO(_ socket: SocketIO!, didReceiveEvent packet: SocketIOPacket!) {
         print("2. didReceiveEvent >>> data: %@", String(packet.data)!);
         print("### typeOf data: %@", type(of: packet.data));
         let jsonData = packet.data.data(using: .utf8)!
@@ -41,7 +45,7 @@ class AsyncSocket: NSObject,  SocketIODelegate {
         if let args = json?["args"] as? [[String : String]] {
             print(args[0]["value"]!);
         }
-    }
+    }*/
     
     func socketIO(_ socket: SocketIO!, didReceiveJSON packet: SocketIOPacket!) {
         print("3. didReceiveJSON >>> data: %@", packet.data);
