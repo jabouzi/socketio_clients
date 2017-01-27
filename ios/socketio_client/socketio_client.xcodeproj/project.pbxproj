@@ -16,6 +16,7 @@
 		D7CA654C1E32B74F008E2005 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CA654B1E32B74F008E2005 /* Security.framework */; };
 		D7CA654E1E32B758008E2005 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CA654D1E32B758008E2005 /* libicucore.tbd */; };
 		D7CA65501E32B7AC008E2005 /* AsyncSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CA654F1E32B7AC008E2005 /* AsyncSocket.swift */; };
+		D7CA65521E364060008E2005 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CA65511E364060008E2005 /* AVFoundation.framework */; };
 		D7FDDCEF1E32741A001ABD41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FDDCEE1E32741A001ABD41 /* AppDelegate.swift */; };
 		D7FDDCF11E32741A001ABD41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FDDCF01E32741A001ABD41 /* ViewController.swift */; };
 		D7FDDCF41E32741A001ABD41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7FDDCF21E32741A001ABD41 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 		D7CA654B1E32B74F008E2005 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D7CA654D1E32B758008E2005 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		D7CA654F1E32B7AC008E2005 /* AsyncSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncSocket.swift; sourceTree = "<group>"; };
+		D7CA65511E364060008E2005 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D7FDDCEB1E32741A001ABD41 /* socketio_client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = socketio_client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7FDDCEE1E32741A001ABD41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7FDDCF01E32741A001ABD41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7CA65521E364060008E2005 /* AVFoundation.framework in Frameworks */,
 				D7CA654E1E32B758008E2005 /* libicucore.tbd in Frameworks */,
 				D7CA654C1E32B74F008E2005 /* Security.framework in Frameworks */,
 				D7CA654A1E32B74A008E2005 /* CFNetwork.framework in Frameworks */,
@@ -128,6 +131,7 @@
 		D7FDDD001E329A34001ABD41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7CA65511E364060008E2005 /* AVFoundation.framework */,
 				D7CA654D1E32B758008E2005 /* libicucore.tbd */,
 				D7CA654B1E32B74F008E2005 /* Security.framework */,
 				D7CA65491E32B74A008E2005 /* CFNetwork.framework */,

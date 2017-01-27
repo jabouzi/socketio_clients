@@ -9,14 +9,14 @@
 import UIKit
 import Foundation
 
-class AsyncSocket: NSObject, SocketIODelegate {
+class AsyncSocket: NSObject, SocketIODelegate, SRWebSocketDelegate {
     
     var socketio = SocketIO();
     
     func connect() {
-        //socketio = SocketIO(); 10.5.4.151
+        //socketio = SocketIO(); 10.5.4.151 192.168.1.14
         socketio.delegate = self;
-        socketio.connect(toHost: "192.168.1.14", onPort: 6543, withParams: nil, withNamespace: "/pa");
+        socketio.connect(toHost: "10.5.4.151", onPort: 6543, withParams: nil, withNamespace: "/pa");
     }
     
     
@@ -33,7 +33,7 @@ class AsyncSocket: NSObject, SocketIODelegate {
         <#code#>
     }*/
     
-    /*func socketIO(_ socket: SocketIO!, didReceiveEvent packet: SocketIOPacket!) {
+    func socketIO(_ socket: SocketIO!, didReceiveEvent packet: SocketIOPacket!) {
         print("2. didReceiveEvent >>> data: %@", String(packet.data)!);
         print("### typeOf data: %@", type(of: packet.data));
         let jsonData = packet.data.data(using: .utf8)!
@@ -45,7 +45,7 @@ class AsyncSocket: NSObject, SocketIODelegate {
         if let args = json?["args"] as? [[String : String]] {
             print(args[0]["value"]!);
         }
-    }*/
+    }
     
     func socketIO(_ socket: SocketIO!, didReceiveJSON packet: SocketIOPacket!) {
         print("3. didReceiveJSON >>> data: %@", packet.data);
@@ -62,6 +62,22 @@ class AsyncSocket: NSObject, SocketIODelegate {
     
     func socketIODidDisconnect(_ socket: SocketIO!, disconnectedWithError error: Error!) {
         print("socket.io disconnected. did error occur? %@", error);
+    }
+    
+    func webSocketDidOpen(_ webSocket: SRWebSocket!) {
+        print("webSocketDidOpen");
+    }
+    
+    func webSocket(_ webSocket: SRWebSocket!, didFailWithError error: Error!) {
+        print("didFailWithError");
+    }
+    
+    func webSocket(_ webSocket: SRWebSocket!, didReceiveMessage message: Any!) {
+        print("didReceiveMessage %@", message);
+    }
+    
+    func webSocket(_ webSocket: SRWebSocket!, didCloseWithCode code: Int, reason: String!, wasClean: Bool) {
+        print("didCloseWithCode %@ %@", code, reason);
     }
     
 }
