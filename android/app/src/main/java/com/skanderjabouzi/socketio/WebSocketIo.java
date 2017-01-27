@@ -5,6 +5,8 @@ import java.util.logging.Logger;
 import java.util.logging.Level;
 import org.json.JSONObject;
 import org.json.JSONException;
+
+import de.greenrobot.event.EventBus;
 import io.socket.SocketIO;
 import io.socket.IOCallback;
 import io.socket.IOAcknowledge;
@@ -22,6 +24,8 @@ public class WebSocketIo implements IOCallback{
     private String value;
     private String lastState;
     private Context context;
+
+    private final EventBus eventBus = EventBus.getDefault();
 
     public static final String PA_INTENT = "com.skanderjabouzi.socketio.PA_INTENT";
 
@@ -49,13 +53,9 @@ public class WebSocketIo implements IOCallback{
         socket.disconnect();
     }
 
-    private void set_pa(String pa_state, String pa_intent) {
-        Intent intent;
-        intent = new Intent();
-        intent.setAction(pa_intent);
-        intent.putExtra("PASTATE", pa_state);
-        context.sendBroadcast(intent);
-        Log.i("#### BROADCAST ", pa_state + " -> " + pa_intent);
+    private void set_pa(String pa_state) {
+        eventBus.post(pa_state);
+        Log.i("EVENTBUS1", pa_state);
     }
 
     @Override
@@ -105,10 +105,10 @@ public class WebSocketIo implements IOCallback{
                 if (!lastState.equals(value))
                 {
                     if (value.equals("on")) {
-                        set_pa("on", PA_INTENT);
+                        set_pa("on");
 
                     } else {
-                        set_pa("off", PA_INTENT);
+                        set_pa("off");
                     }
                     lastState = value;
                 }

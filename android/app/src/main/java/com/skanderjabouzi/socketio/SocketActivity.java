@@ -1,6 +1,7 @@
 package com.skanderjabouzi.socketio;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import de.greenrobot.event.EventBus;
+
 
 public class SocketActivity extends AppCompatActivity{
 
@@ -20,6 +23,7 @@ public class SocketActivity extends AppCompatActivity{
     WebSocketIo socketIo;
     public static Activity sa;
 
+    private final EventBus eventBus = EventBus.getDefault();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,7 @@ public class SocketActivity extends AppCompatActivity{
 
         mMessagesView = (TextView) findViewById(R.id.text);
         mMessagesView.setText("TEXT TEXT");
+        eventBus.register(this);
     }
 
     @Override
@@ -49,6 +54,14 @@ public class SocketActivity extends AppCompatActivity{
 
     }
 
+    public void onEvent(String event) {
+        Log.i("EVENTBUS3", event);
+        if (event.equals("off")) {
+            startActivity(new Intent(this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
+            finish();
+        }
+    }
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -56,6 +69,7 @@ public class SocketActivity extends AppCompatActivity{
 //        socketTask.cancel(true);
 //        socketTask.disconnect();
         socketIo.disconnect();
+        eventBus.unregister(this);
     }
 
     @Override
@@ -65,6 +79,7 @@ public class SocketActivity extends AppCompatActivity{
 //        socketTask.cancel(true);
 //        socketTask.disconnect();
         socketIo.disconnect();
+        eventBus.unregister(this);
     }
 
     @Override
@@ -74,6 +89,7 @@ public class SocketActivity extends AppCompatActivity{
 //        socketTask.cancel(true);
 //        socketTask.disconnect();
         socketIo.disconnect();
+        eventBus.unregister(this);
     }
 
     @Override

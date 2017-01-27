@@ -1,5 +1,6 @@
 package com.skanderjabouzi.socketio;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
@@ -7,6 +8,8 @@ import android.widget.MediaController;
 import android.view.MotionEvent;
 import android.widget.VideoView;
 import android.util.Log;
+
+import de.greenrobot.event.EventBus;
 
 /*
  * This code is to accompany the Tutsplus tutorial:
@@ -24,9 +27,12 @@ public class MainActivity extends Activity {
 	WebSocketIo socketIo;
     public static Activity ma;
 
+	private EventBus eventBus = EventBus.getDefault();
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+        eventBus.register(this);
         ma = this;
         Log.d("VIDEO", "onCreate");
 		setContentView(R.layout.activity_main);
@@ -49,6 +55,14 @@ public class MainActivity extends Activity {
 		Log.i("VIDEO", "POSITION : " + String.valueOf(currentPosition));
 		return true;
 	}
+
+    public void onEvent(String event) {
+        Log.i("EVENTBUS2", event);
+        if (event.equals("on")) {
+            startActivity(new Intent(this, SocketActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
+            finish();
+        }
+    }
 
 	@Override
 	protected void onResume() {
@@ -76,6 +90,7 @@ public class MainActivity extends Activity {
 //        socketTask.cancel(true);
 //        socketTask.disconnect();
         socketIo.disconnect();
+        eventBus.unregister(this);
 		Log.d("VIDEO", "onPause");
 	}
 
@@ -86,6 +101,7 @@ public class MainActivity extends Activity {
 //        socketTask.cancel(true);
 //        socketTask.disconnect();
         socketIo.disconnect();
+        eventBus.unregister(this);
 //        Log.d("ASYNCTASK ", socketTask.isCancelled() ? "CANCELLED" : "NOT CANCELLED");
 		if (vidView.isPlaying()) Log.i("VIDEO", "IS PLAYING 1");
 		else Log.i("VIDEO", "IS NOT PLAYING 1");
@@ -101,6 +117,7 @@ public class MainActivity extends Activity {
 //        socketTask.cancel(true);
 //        socketTask.disconnect();
         socketIo.disconnect();
+        eventBus.unregister(this);
 //        Log.d("ASYNCTASK ", socketTask.isCancelled() ? "CANCELLED" : "NOT CANCELLED");
 		if (vidView.isPlaying()) Log.i("VIDEO", "IS PLAYING 2");
 		else Log.i("VIDEO", "IS NOT PLAYING 2");
