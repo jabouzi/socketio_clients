@@ -9,9 +9,17 @@
 import UIKit
 import Foundation
 
+protocol WebsocketDelegate {
+    
+    func onResult(type: String, value: String)
+}
+
 class AsyncSocket: NSObject, SocketIODelegate {
     
     var socketio = SocketIO();
+    var delegate:WebsocketDelegate?
+    var _type: String = "";
+    var _value: String = "";
     
     func connect() {
         //socketio = SocketIO(); 10.5.4.151
@@ -22,30 +30,28 @@ class AsyncSocket: NSObject, SocketIODelegate {
     
     func socketIODidConnect(_ socket: SocketIO!) {
         print("Socket.io Connected!");
-        socketio.sendEvent("set_pa", withData: "text_swift")
+//        socketio.sendEvent("set_pa", withData: "text_swift")
     }
     
     func socketIO(_ socket: SocketIO!, didReceiveMessage packet: SocketIOPacket!) {
         print("1. didReceiveMessage >>> data: %@", packet.data);
     }
     
-    /*func socketIO(_ socket: SocketIO!, didReceiveEvent packet: SocketIOPacket!) {
-        <#code#>
-    }*/
-    
-    /*func socketIO(_ socket: SocketIO!, didReceiveEvent packet: SocketIOPacket!) {
+    func socketIO(_ socket: SocketIO!, didReceiveEvent packet: SocketIOPacket!) {
         print("2. didReceiveEvent >>> data: %@", String(packet.data)!);
         print("### typeOf data: %@", type(of: packet.data));
         let jsonData = packet.data.data(using: .utf8)!
         let json = try? JSONSerialization.jsonObject(with: jsonData, options:.allowFragments) as! [String:AnyObject];
         
         if let name = json!["name"] as? String {
-            print(name)
+            _type = name;
         }
         if let args = json?["args"] as? [[String : String]] {
-            print(args[0]["value"]!);
+            _value = args[0]["value"]!;
         }
-    }*/
+        
+        self.delegate?.onResult(type: _type, value: _value);
+    }
     
     func socketIO(_ socket: SocketIO!, didReceiveJSON packet: SocketIOPacket!) {
         print("3. didReceiveJSON >>> data: %@", packet.data);

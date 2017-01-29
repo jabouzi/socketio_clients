@@ -387,11 +387,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 449ZVE3U99;
 				INFOPLIST_FILE = socketio_client/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.skanderjabouzi.socketio-client";
+				PRODUCT_BUNDLE_IDENTIFIER = com.skanderjabouzi.socket.io;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = $PROJECT_DIR/Bridge/WebsocketsBridge.h;
 				SWIFT_VERSION = 3.0;
@@ -402,11 +403,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 449ZVE3U99;
 				INFOPLIST_FILE = socketio_client/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.skanderjabouzi.socketio-client";
+				PRODUCT_BUNDLE_IDENTIFIER = com.skanderjabouzi.socket.io;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = $PROJECT_DIR/Bridge/WebsocketsBridge.h;
 				SWIFT_VERSION = 3.0;

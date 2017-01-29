@@ -10,23 +10,22 @@ import UIKit
 import AVKit
 import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WebsocketDelegate {
     
     var playerViewController : AVPlayerViewController!;
+    let asyncSocket: AsyncSocket = AsyncSocket();
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        asyncSocket.delegate=self
         playMovie()
         
-        let asyncSocket = AsyncSocket();
-        asyncSocket.connect();
-        
-        /*let backgroundQueue = DispatchQueue(label: "com.skanderjabouzi.socketio-client.queue", qos: .background, target: nil)
+        let backgroundQueue = DispatchQueue(label: "com.skanderjabouzi.socketio-client.queue", qos: .background, target: nil)
         let block = DispatchWorkItem {
-            asyncSocket.connect();
+            self.asyncSocket.connect();
         }
-        backgroundQueue.async(execute: block)*/
+        backgroundQueue.async(execute: block)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -54,6 +53,11 @@ class ViewController: UIViewController {
     {
         let frame = self.view.frame;
         playerViewController.view.frame = frame;
+    }
+    
+    func onResult(type: String, value: String)
+    {
+        print ("\(type) : \(value)");
     }
 
 
