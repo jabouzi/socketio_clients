@@ -11,6 +11,7 @@
 
 #import "SocketIO.h"
 #import "SocketIOPacket.h"
+#import "SRWebSocket.h"
 
 
 #endif /* WebsocketsBridge_h */

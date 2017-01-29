@@ -22,7 +22,7 @@ class AsyncSocket: NSObject, SocketIODelegate {
     var _value: String = "";
     
     func connect() {
-        //socketio = SocketIO(); 10.5.4.151
+        //socketio = SocketIO(); 10.5.4.151 192.168.1.14
         socketio.delegate = self;
         socketio.connect(toHost: "192.168.1.14", onPort: 6543, withParams: nil, withNamespace: "/pa");
     }
@@ -68,6 +68,22 @@ class AsyncSocket: NSObject, SocketIODelegate {
     
     func socketIODidDisconnect(_ socket: SocketIO!, disconnectedWithError error: Error!) {
         print("socket.io disconnected. did error occur? %@", error);
+    }
+    
+    func webSocketDidOpen(_ webSocket: SRWebSocket!) {
+        print("webSocketDidOpen");
+    }
+    
+    func webSocket(_ webSocket: SRWebSocket!, didFailWithError error: Error!) {
+        print("didFailWithError");
+    }
+    
+    func webSocket(_ webSocket: SRWebSocket!, didReceiveMessage message: Any!) {
+        print("didReceiveMessage %@", message);
+    }
+    
+    func webSocket(_ webSocket: SRWebSocket!, didCloseWithCode code: Int, reason: String!, wasClean: Bool) {
+        print("didCloseWithCode %@ %@", code, reason);
     }
     
 }
