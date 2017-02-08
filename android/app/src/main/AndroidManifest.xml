@@ -40,6 +40,11 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
+        <activity
+            android:name=".VideoActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
         <receiver android:name="PaReceiver" >
             <intent-filter>
                 <action android:name="com.skanderjabouzi.socketio.PA_INTENT" >

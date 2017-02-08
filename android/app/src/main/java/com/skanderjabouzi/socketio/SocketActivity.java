@@ -3,10 +3,7 @@ package com.skanderjabouzi.socketio;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -57,7 +54,7 @@ public class SocketActivity extends AppCompatActivity{
     public void onEvent(String event) {
         Log.i("EVENTBUS3", event);
         if (event.equals("off")) {
-            startActivity(new Intent(this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
+            startActivity(new Intent(this, VideoActivity.class).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT));
             finish();
         }
     }

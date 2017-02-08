@@ -14,10 +14,6 @@ import io.socket.SocketIOException;
 import android.content.Intent;
 import android.content.Context;
 
-/**
- * Created by dev on 1/19/17.
- */
-
 public class WebSocketIo implements IOCallback{
 
     private SocketIO socket;
@@ -33,7 +29,7 @@ public class WebSocketIo implements IOCallback{
 
         lastState = _lastState;
         context = _context;
-        Log.i("### LASTE STATE : ", lastState);
+        Log.i("### ADDR : ", addr);
 
         try {
             socket = new SocketIO();
@@ -51,6 +47,10 @@ public class WebSocketIo implements IOCallback{
     public void disconnect()
     {
         socket.disconnect();
+    }
+
+    public void emit(String action, String value) {
+        socket.emit(action, value);
     }
 
     private void set_pa(String pa_state) {
@@ -104,7 +104,7 @@ public class WebSocketIo implements IOCallback{
             {
                 if (!lastState.equals(value))
                 {
-                    if (value.equals("on")) {
+                    if (value.toLowerCase().equals("on") || value.toLowerCase().equals("enable")) {
                         set_pa("on");
 
                     } else {

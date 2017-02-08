@@ -9,21 +9,32 @@
 import UIKit
 import AVKit
 import AVFoundation
+import Swinject
 
 class ViewController: UIViewController, WebsocketDelegate {
     
     var playerViewController : AVPlayerViewController!;
-    let asyncSocket: AsyncSocket = AsyncSocket();
+    //let asyncSocket: AsyncSocket = AsyncSocket();
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        let container = Container()
+        container.register(SocketIO.self) { _ in SocketIO() }
+        let socketIO = container.resolve(SocketIO.self)!
+//        connect.connect(url: "test", port: "test", nameSpace: "test")
+        
+        container.register(AsyncSocket.self) {r in AsyncSocket(url: "10.5.4.63", port: "6543", nameSpace: "/pa", socketio: socketIO) }
+        let asyncSocket = container.resolve(AsyncSocket.self)!
+        //socket._connect()
+        
         asyncSocket.delegate=self
         playMovie()
         
         let backgroundQueue = DispatchQueue(label: "com.skanderjabouzi.socketio-client.queue", qos: .background, target: nil)
         let block = DispatchWorkItem {
-            self.asyncSocket.connect();
+            asyncSocket.connect();
         }
         backgroundQueue.async(execute: block)
         // Do any additional setup after loading the view, typically from a nib.

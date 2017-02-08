@@ -9,28 +9,54 @@
 import UIKit
 import Foundation
 
+protocol SocketProtocol {
+    var socketio: SocketIO { get };
+    var url: String!  { get }
+    var port: String!  { get }
+    var nameSpace: String!  { get }
+}
+
 protocol WebsocketDelegate {
     
     func onResult(type: String, value: String)
 }
 
-class AsyncSocket: NSObject, SocketIODelegate {
+class AsyncSocket: NSObject, SocketProtocol, SocketIODelegate {
     
-    var socketio = SocketIO();
+
+    internal var socketio: SocketIO
+
+    
+//    var socketio = SocketIO;
     var delegate:WebsocketDelegate?
     var _type: String = "";
     var _value: String = "";
+    var url: String!
+    var port: String!
+    var nameSpace: String!
+    
+    init(url: String, port: String, nameSpace: String, socketio: SocketIO) {
+        self.url = url
+        self.port = port
+        self.nameSpace = nameSpace
+        self.socketio = socketio
+        print("Socket.io INIT!");
+    }
     
     func connect() {
         //socketio = SocketIO(); 10.5.4.151 192.168.1.14
-        socketio.delegate = self;
-        socketio.connect(toHost: "192.168.1.14", onPort: 6543, withParams: nil, withNamespace: "/pa");
+        //        socketio.delegate = self;
+        print("sel.url ###########");
+        print(self.url);
+        print("sel.url ###########");
+        socketio.connect(toHost: self.url ,onPort: Int(self.port)!, withParams: nil, withNamespace: self.nameSpace);
+        print("Socket.io Connecting!");
     }
     
     
     func socketIODidConnect(_ socket: SocketIO!) {
         print("Socket.io Connected!");
-//        socketio.sendEvent("set_pa", withData: "text_swift")
+        //        socketio.sendEvent("set_pa", withData: "text_swift")
     }
     
     func socketIO(_ socket: SocketIO!, didReceiveMessage packet: SocketIOPacket!) {

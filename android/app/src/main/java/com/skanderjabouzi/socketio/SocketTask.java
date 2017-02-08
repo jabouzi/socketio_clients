@@ -10,7 +10,7 @@ public class SocketTask extends AsyncTask<Void, Void, Void> {
     Context context;
     String lastState;
 
-    MainActivity m_activity = null;
+    VideoActivity m_activity = null;
     boolean m_isFinished  = false;
 
     SocketTask(String addr, Context _context, String _lastState){
