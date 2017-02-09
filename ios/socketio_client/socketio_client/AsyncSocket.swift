@@ -45,7 +45,7 @@ class AsyncSocket: NSObject, SocketProtocol, SocketIODelegate {
     
     func connect() {
         //socketio = SocketIO(); 10.5.4.151 192.168.1.14
-        //        socketio.delegate = self;
+        socketio.delegate = self;
         print("sel.url ###########");
         print(self.url);
         print("sel.url ###########");
@@ -111,6 +111,5 @@ class AsyncSocket: NSObject, SocketProtocol, SocketIODelegate {
     func webSocket(_ webSocket: SRWebSocket!, didCloseWithCode code: Int, reason: String!, wasClean: Bool) {
         print("didCloseWithCode %@ %@", code, reason);
     }
-    
 }
 

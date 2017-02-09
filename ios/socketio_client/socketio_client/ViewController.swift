@@ -14,7 +14,7 @@ import Swinject
 class ViewController: UIViewController, WebsocketDelegate {
     
     var playerViewController : AVPlayerViewController!;
-    //let asyncSocket: AsyncSocket = AsyncSocket();
+    var asyncSocket: AsyncSocket?;
     
     override func viewDidLoad() {
         
@@ -25,16 +25,16 @@ class ViewController: UIViewController, WebsocketDelegate {
         let socketIO = container.resolve(SocketIO.self)!
 //        connect.connect(url: "test", port: "test", nameSpace: "test")
         
-        container.register(AsyncSocket.self) {r in AsyncSocket(url: "10.5.4.63", port: "6543", nameSpace: "/pa", socketio: socketIO) }
-        let asyncSocket = container.resolve(AsyncSocket.self)!
+        container.register(AsyncSocket.self) {r in AsyncSocket(url: "192.168.1.21", port: "6543", nameSpace: "/pa", socketio: socketIO) }
+        self.asyncSocket = container.resolve(AsyncSocket.self)!
         //socket._connect()
         
-        asyncSocket.delegate=self
+        self.asyncSocket?.delegate=self
         playMovie()
         
         let backgroundQueue = DispatchQueue(label: "com.skanderjabouzi.socketio-client.queue", qos: .background, target: nil)
         let block = DispatchWorkItem {
-            asyncSocket.connect();
+            self.asyncSocket?.connect();
         }
         backgroundQueue.async(execute: block)
         // Do any additional setup after loading the view, typically from a nib.
@@ -65,7 +65,5 @@ class ViewController: UIViewController, WebsocketDelegate {
     {
         print ("\(type) : \(value)");
     }
-
-
 }
 
