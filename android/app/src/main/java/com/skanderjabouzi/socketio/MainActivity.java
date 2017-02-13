@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
             if (socketIo == null) {
                 socketIo = new WebSocketIo();
-                socketIo.connect("http://" + _url.getText().toString() + ":6543/pa", getApplicationContext(), "off");
+                socketIo.connect("http://" + _url.getText().toString() + ":80/pa", getApplicationContext(), "off");
             }
             }
         });
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (socketIo != null) {
-                    socketIo.emit("set_pa", "enabled");
+                    socketIo.emit("set_pa", "enable");
                 }
             }
         });
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (socketIo != null) {
-                    socketIo.emit("set_pa", "disabled");
+                    socketIo.emit("set_pa", "disable");
                 }
             }
         });

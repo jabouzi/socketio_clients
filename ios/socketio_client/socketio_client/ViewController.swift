@@ -25,7 +25,7 @@ class ViewController: UIViewController, WebsocketDelegate {
         let socketIO = container.resolve(SocketIO.self)!
 //        connect.connect(url: "test", port: "test", nameSpace: "test")
         
-        container.register(AsyncSocket.self) {r in AsyncSocket(url: "192.168.1.21", port: "6543", nameSpace: "/pa", socketio: socketIO) }
+        container.register(AsyncSocket.self) {r in AsyncSocket(url: "10.5.224.177", port: "6543", nameSpace: "/pa", socketio: socketIO) }
         self.asyncSocket = container.resolve(AsyncSocket.self)!
         //socket._connect()
         

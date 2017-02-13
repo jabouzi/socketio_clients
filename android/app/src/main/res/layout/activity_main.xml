@@ -46,7 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="10.5.224.192"
+            android:text="pa.airtimeinflight.com"
             android:ems="10"
             android:layout_below="@+id/linearLayout"
             android:layout_alignRight="@+id/linearLayout"
